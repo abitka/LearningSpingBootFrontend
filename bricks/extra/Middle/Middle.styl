@@ -1,0 +1,49 @@
+.{$px}Middle
+    clearfix()
+
+    &-column
+        float: left
+        width: 250px
+        margin-right: -100%
+        margin-top: 20px
+        +m('tablet')
+            float: none
+            margin-right: 0
+            width: auto
+            margin-top: 50px
+
+
+    &-top
+        padding: 20px 0 20px
+        margin-bottom: 20px
+        background: clr-primary
+        min-height: 130px
+        display: flex
+        align-items: center
+        justify-content: center
+        +e(-title)
+            margin: 0
+            color: clr-white
+            text-align: center
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 45px;
+            text-transform: uppercase;
+            letter-spacing: 1.12px;
+    
+    &-footer
+        margin-top: 19px
+
+    &-main
+        width: 100%;
+        position: relative
+        margin-top: 20px
+        +m('tablet')
+            float: none
+            padding-left: 0
+
+
+    &-article
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        background-color: #f4f4f4;
+

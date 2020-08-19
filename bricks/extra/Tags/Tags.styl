@@ -1,0 +1,49 @@
+$leftPadTagsIns = 30px // Отсутп для вложенных блоков тегов
+.{$px}Tags
+    visibility: visible;
+    & &
+        padding-left: $leftPadTagsIns
+        margin-top: 20px
+        margin-bottom: 20px
+    &_genres
+        +b(Tag)
+            border-color: transparent
+    &-title
+        display: block
+        margin-bottom: 5px
+        font-size: font-md
+        margin-left: -($leftPadTagsIns)
+        +b(Tag)
+            font-size: @font-size
+    
+    +b(Tag)
+        margin-right: 20px
+        margin-bottom: 10px
+    
+    
+.{$px}Tag
+    display: inline-block
+    font-size: font-nrp
+    color: text-main
+    border-bottom: 1px dashed @color
+    font-weight: 500
+    line-height: 1.2em
+    &-amount
+        display: inline-block
+        margin-left: 5px
+        font-size: 0.7em
+    
+    &_md
+        font-size: (font-md + 2)
+    &_lg
+        font-size: (font-lg + 3)
+        line-height: 1.1em
+    &_sm
+        font-size: font-nrm
+    &_xs
+        font-size: (font-sm - 1)
+    +m('desktop')
+        &:hover
+            color: clr-primary
+            border-bottom: 1px dashed @color
+            transition: border 0.4s
