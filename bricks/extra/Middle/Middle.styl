@@ -22,14 +22,35 @@
         align-items: center
         justify-content: center
         +e(-title)
-            margin: 0
+            margin: 0 !important
             color: clr-white
             text-align: center
             font-size: 28px;
             font-weight: 400;
+            padding-bottom: 0
             line-height: 45px;
             text-transform: uppercase;
             letter-spacing: 1.12px;
+    &-title
+        font-size: 23px;
+        font-weight: 500;
+        display: block
+        position: relative
+        padding-bottom: 10px
+        line-height: 1.2em
+        margin-top: 60px
+        margin-bottom: 0
+        &:first-child
+            margin-top: @margin-top
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            width: 57px;
+            height: 3px;
+            background-color: clr-primary;
+            bottom: 0
+            left: 0
     
     &-footer
         margin-top: 19px

@@ -335,6 +335,60 @@ textarea {
   font: inherit;
 }
 
+.breadcrumbs {
+  text-transform: uppercase;
+  line-height: 1.8em;
+  font-size: 12px;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs:before,
+.breadcrumbs:after {
+  content: "";
+  display: table;
+}
+.breadcrumbs:after {
+  clear: both;
+}
+.breadcrumbs-item {
+  display: block;
+  float: left;
+  position: relative;
+}
+.breadcrumbs-item + .breadcrumbs-item {
+  margin-left: 14px;
+}
+.breadcrumbs-item + .breadcrumbs-item:after {
+  content: '/';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  z-index: 0;
+  position: absolute;
+  text-align: center;
+  left: -17px;
+  top: 50%;
+  margin-top: -11px;
+}
+.breadcrumbs-item a {
+  color: #d23200;
+  border-bottom: none;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 990px) {
+  .breadcrumbs-item a:hover {
+    text-decoration: underline;
+  }
+}
+.breadcrumbs-item_current {
+  color: clr-links;
+  text-decoration: none;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;

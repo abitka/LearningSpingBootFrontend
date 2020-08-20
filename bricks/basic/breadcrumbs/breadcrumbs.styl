@@ -1,0 +1,45 @@
+.{$px}breadcrumbs
+    breadcrumbs-links = #d23200     // Цвет ссылок
+    breadcrumbs-current = clr-links // Цвет текущего пункта хлебных крошек
+    breadcrumbs-font = font-xs      // Размер шрифта
+    breadcrumbs-marginItem = 14px   // Расстояние между пунктами хлебных крошек
+    breadcrumbs-splitter = '/'      // Разделитель для хлебных крошек
+    
+    text-transform: uppercase;
+    line-height: 1.8em
+    font-size: breadcrumbs-font;
+    overflow: hidden
+    display: block
+    clearfix()
+    margin: 0
+    padding: 0
+    &-item
+        display: block
+        float: left
+        position: relative
+        & + &
+            margin-left: breadcrumbs-marginItem
+            &:after
+                content: breadcrumbs-splitter
+                display: block
+                width: 20px
+                height: 20px
+                line-height: @height
+                z-index: 0
+                position: absolute
+                text-align: center
+                left: - ( (@margin-left / 2) + (@width / 2) -1px )
+                top: 50%
+                margin-top: - (@height / 2) - 1px
+        a
+            color: breadcrumbs-links;
+            border-bottom: none
+            position: relative
+            z-index: 1
+            +m(desktop)
+                &:hover
+                    text-decoration: underline
+
+        &_current
+            color: breadcrumbs-current;
+            text-decoration: none
