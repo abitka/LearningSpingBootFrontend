@@ -9,11 +9,17 @@ margVertical = 7.6%
     width: 100%
     +m('desktop')
         width: auto
-        margin: 0px (- margHorizontal/2) (- margVertical)
+        margin: 0px (- margHorizontal/2) //(- margVertical)
     +m('tablet')
         justify-content: center
     +m('phone')
         margin-left: 0
+    &-footer
+        display: flex
+        margin-top: 0px
+        width: 100%
+        &_center
+            justify-content: center
     
     +b(Card)
         width: 18%
@@ -29,8 +35,6 @@ margVertical = 7.6%
     
     &{b(Slider-box)}
         margin-top: -30px
-        .slick-list
-            padding-top: 30px
         +b(Card)
             width: 100%
             margin-left: 0 !important
@@ -219,6 +223,8 @@ margVertical = 7.6%
         align-items: center
         justify-content: center
         box-shadow: 0 0 14px 4px rgba(0, 0, 0, 0.07);
+        &:focus
+            outline: none
         +m('desktop')
             &:hover
                 border-bottom-color: transparent
@@ -432,7 +438,32 @@ margVertical = 7.6%
                 border-right: 3px solid ribbonColorDark;
                 border-bottom: 3px solid transparent;
                 border-top: 3px solid ribbonColorDark;
-       
+                
+    &-status
+        position: absolute
+        right: -15px
+        top: -15px
+        //background: rgba(#fff, 0.5)
+        background: radial-gradient(circle, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 75%);
+        padding: 8px
+        width: 50px
+        height: 50px
+        border-radius: 100px
+        display: flex
+        justify-content: center
+        align-items: center
+        +m('desktop')
+            &:hover
+                cursor: default
+                position: absolute
+                padding: 8px
+                display: flex
+                border-bottom-color: transparent
+                
+        img
+            max-width: 100%
+            max-height: 100%
+    
     &-sale
         position: absolute
         text-align: center

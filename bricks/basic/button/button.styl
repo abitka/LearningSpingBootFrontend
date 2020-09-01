@@ -11,7 +11,7 @@
     $buttonPadding = 3px 15px   // Поля для кнопки
     $radius = 5px               // Скругления углов для всех кнопок
     $round = 10px                // Скругления углов для кнопок с классом .btn_round
-    $borderSize = 2px           // Толщина границы
+    $borderSize = 1px           // Толщина границы
 
     $color = clr-white          // Стандартный цвет кнопки
 
@@ -34,12 +34,18 @@
             &:hover
                 transition:  all 200ms
                 cursor: pointer
-                background-color: lighten(saturate(@border-color[0], 20%), 20%)
-                border-color: lighten(saturate(@border-color[0], 20%), 20%)
                 text-decoration: none
-            &.btn_outline
-                &:hover
-                    color: text
+                if outline
+                    background-color: lighten(saturate(@border-color[0], 20%), 80%)
+                    border-color: lighten(saturate(@border-color[0], 20%), 80%)
+                    color: color !important
+                else
+                    background-color: lighten(saturate(@border-color[0], 20%), 20%)
+                    border-color: lighten(saturate(@border-color[0], 20%), 20%)
+                    &.btn_outline
+                        background-color: lighten(saturate(@border-color[0], 20%), 80%)
+                        border-color: lighten(saturate(@border-color[0], 20%), 80%)
+                        color: color !important
 
     btnSize(addDefault)
         font-size: (@font-size + addDefault)
@@ -50,6 +56,7 @@
     justify-content: center
     min-height: $height
     border: $borderSize solid $color
+    border-width: $borderSize !important
     border-color: $color
     border-radius: $radius
     background: $color
@@ -70,9 +77,14 @@
         outline:none
     
     &-icon
-        vertical-align: middle
         margin: 0 !important
         margin-right: 10px !important
+        height: 24px
+        width: 24px
+        img
+            max-height: 100%
+            max-width: 100%
+            display: block
 
     &-content
         position: relative
@@ -131,9 +143,22 @@
 
     &_warning
         btnHover: clr-warning clr-white
+        
+    &[disabled="disabled"]
+    &[disabled=true]
+    &[disabled="true"]
+        btnHover: #e8eaef #7c8088
+        +m('desktop')
+            &:hover
+                cursor: default
 
     &_sm
         btnSize: -4px
+        
+    &_nr
+        btnSize: -2px
+        padding-left: 20px
+        padding-right: 20px
     
     &_md
         btnSize: 3px

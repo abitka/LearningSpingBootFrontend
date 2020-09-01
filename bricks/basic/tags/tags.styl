@@ -114,6 +114,7 @@ table
             border-top: 0
 
 
+
 .{$px}link
     color: clr-primary
     a()
@@ -151,6 +152,26 @@ table
     &_700
         +m(700px)
             display: none !important
+
+#__bs_notify__
+    pointer-events: inherit !important
+    .errorView
+        text-align: left !important
+        font-size: 30px !important
+        line-height: 1.4em !important
+        white-space: pre-line !important
+        position: fixed !important
+        left: 0
+        top: 0
+        right:0
+        bottom: 0
+        background: rgba(#000, 0.7)
+        padding: 30px
+        overflow: auto
+        font-family: monospace !important
     
-    
+    .titleError
+        color: red !important
+
+
 

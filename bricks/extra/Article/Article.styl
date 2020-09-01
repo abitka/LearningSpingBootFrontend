@@ -1,0 +1,108 @@
+.{$px}Article
+    padding: 30px 0 40px
+    clearfix()
+    overflow: hidden
+
+    > {b(pict)}:first-child
+        margin-top: 0
+
+    +b(Cards)
+        margin-top: 45px
+
+
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
+        color: #484848;
+        font-size: 24px;
+        font-weight: 500
+        line-height: 1.2em;
+        margin-top: 23px
+        margin-bottom: 20px
+        &:first-child
+            margin-top: 0
+
+    h1
+        font-size: 36px
+
+    h2
+        font-size: font-xl
+    h3
+        font-size: 24px;
+
+    h4
+        font-size: font-md;
+    h5
+        font-size: font-nr
+    h6
+        font-size: font-sm
+
+
+    {b(Toc)} + h2
+        margin-top: 0
+
+    ul
+    ol
+        padding-left: 0
+        margin-top: 23px
+        margin-bottom: 27px
+        line-height: 1.4em
+        li
+            position: relative
+            padding-left: 0px
+            list-style: none
+            &:after
+                position: absolute
+                content: ''
+                display: block
+                width: 18px
+                height: 1px
+                display: none
+                background: clr-dk
+                left: 0
+                top: 13px
+            + li
+                margin-top: 3px
+    ol
+        counter-reset: list
+        li
+            list-style: none
+            position: relative
+            &:after
+                background: none
+                height: 20px
+                width: 26px
+                text-align: right
+                position: absolute
+                left: -8px
+                top: -1px
+                counter-increment: list
+                content: counter(list)')'
+    img
+        margin-top: 20px
+
+    +b(pict)
+        img
+            margin-top: 0
+
+    p
+        line-height: 1.5em
+        color: #757575
+        margin-bottom: 10px
+
+    table
+        margin-top: 50px
+        &:last-child
+            margin-bottom: 0
+    +b(clearfix)
+        clearfix()
+    &_ins
+        font-size: font-sm
+        line-height: 1.6em
+
+
+
+

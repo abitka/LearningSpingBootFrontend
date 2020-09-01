@@ -1,0 +1,65 @@
+.{$px}HideBlock
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+    padding: 2.2rem 4.5rem
+    position: relative
+    &-title
+        font-size: font-mdp;
+        font-weight: bold
+        text-transform: uppercase;
+        line-height: 1.2em
+    &-header
+        display: block
+    &-content
+        padding-top: 2rem
+        line-height: 1.2em
+        padding-bottom: 6rem
+        overflow: hidden
+        transition: height 200ms, padding 150ms 50ms
+    &-footer
+        text-align: center
+        margin-top: 3.8rem
+
+    &-trigger
+        position: absolute
+        border-radius: 1000px
+        width: 7.4rem
+        height: @width
+        border: none
+        z-index: 50
+        right: 12.2rem
+        bottom: - (@height / 2) + 0.2rem
+        background: clr-danger
+        cursor: pointer
+        +m('phone')
+            right: 50%
+            margin-right: - (@width / 2)
+        &:focus
+            outline: none
+        &:after
+            position: absolute
+            left: 50%
+            top: 50%
+            content: ''
+            display: block
+            background: img('icons', 'arrow_hide.png') center center no-repeat
+            background-size: contain
+            width: 3.3rem
+            height: 1.9rem
+            margin-top: -(@height / 2) - 0.2rem
+            margin-left: -(@width / 2)
+            transform: rotate(180deg)
+            transition: transform 200ms
+        &:hover
+            background: lighten(@background, 20%)
+
+
+    &_CLOSE
+        +e(-content)
+            height: 0 !important
+            padding: 0
+            transition: height 200ms, padding 150ms 50ms
+        +e(-trigger)
+            &:after
+                margin-top: -(1.9rem / 2) + 0.2rem
+                transform: none
+                transition: transform 200ms

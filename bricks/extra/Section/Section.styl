@@ -22,6 +22,7 @@
         height: auto
     &-title
         margin-bottom: 28px
+        margin-top: 45px
         font-size: font-mdm;
         font-weight: 600;
         line-height: 1.2em;
@@ -46,12 +47,28 @@
         position: relative
         display: flex
         align-items: center
-        margin-bottom: 54px
-        margin-top: 23px
-        background: img('bg', 'lineHeaderSection.png') 0 center repeat-x;
+        flex-wrap: wrap
+        margin-bottom: 28px
+        margin-top: 35px
+        min-height: 45px
+        &:first-child
+            margin-top: 0
+        &-form
+            margin-top: 0
+            width: auto
+            margin-left: 30px
+            +m('phone')
+                justify-content: center
+                width: 100%
+                margin-left: 0
+                margin-top: 20px
+            +b(form)
+                &-label
+                    color: text-main
         +e(-title)
             margin-right: auto
             margin-bottom: 0
+            margin-top: 0
         &_sm
             margin-bottom: 48px
             +e(-title)
@@ -83,6 +100,10 @@
             +m('phone')
                 &:first-child
                     margin-top: 65px
+    &-footer
+        margin-top: 30px
+        display: flex
+        justify-content: center
     &-filter
         visibility: visible
         padding-right: 26px

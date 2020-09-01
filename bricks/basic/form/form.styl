@@ -1,14 +1,15 @@
 /*-----------  Стилизация текстовых полей формы и текстовых областей  -----------*/
-$input-height = 56px
-$input-padding = 5px 25px
+$input-height = 45px
+$input-padding = 5px 0px
 $input-borderWidth = 1px
-$bd-input = #e0e0e0
+$bd-input = #b8b8b8
 $bd-radius_nr = 0px
 
 input_text()
     padding: $input-padding
     min-height: $input-height
-    border: $input-borderWidth solid $bd-input
+    border: none
+    border-bottom: $input-borderWidth solid $bd-input
     background-color: clr-white
     display: block
     font-size: font-nrp
@@ -71,7 +72,7 @@ select
     $borderRadius = $bd-radius_nr       // Скругление полей ввода
     $borderWidth = $input-borderWidth   // Толщина границы полей ввода
     $heightInput = $input-height        // Высота полей ввода
-    $bgColor     = #f9fafc              // Фон полей в форме
+    $bgColor     = clr-white              // Фон полей в форме
     $paddingBox = $input-padding        // Поля для input и textarea
     $spaceBetween = 25px    // Расстояние между группами по вертикали
     
@@ -85,12 +86,18 @@ select
         box-sizing: border-box
         padding: $paddingBox
         border-radius: $borderRadius
-        border: $borderWidth solid $borderColor
+        border: none
+        border-bottom: $borderWidth solid $borderColor
         font-size: $fontSzInput
         background-color: $bgColor
         line-height: ($heightInput - ($paddingBox[0] * 2))
+        &_hide
+            display: none
         &_error
             border-color: clr-danger
+        &_date
+            width: 100px !important
+            text-align: center
         &:focus
             outline:none
     
@@ -151,6 +158,10 @@ select
     &-error
         font-size: font-nrm
         color: clr-danger
+    &-info
+        font-size: font-nrm
+        color: clr-success
+        //margin-top: 7px
     
     
     &-label
@@ -164,11 +175,64 @@ select
     &-group
         &_center
             text-align: center
+        &_right
+            text-align: right
         & + &
             margin-top: $spaceBetween
+        &_row
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+            +e(-input)
+                + {e(-input)}
+                + {e(-btn)}
+                    margin-top: 0
+                    margin-left: 30px
+                &_code
+                    max-width: 150px
+                    width: 150px
+                    min-width: auto
+            +e(-btn)
+                margin-top: 5px
+            
+            
+    
+        &_key
+            max-width: 200px
+            min-width: auto
+            margin-left: auto
+            margin-right: auto
+            +e(-input)
+                text-align: center
+                min-width: auto
+                max-width: 100%
+        &_hide
+            display: none
+    
     &_contacts
         +e(-input)
             min-width: auto
+    &_inline
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        +e(-group)
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            margin-right: 20px
+            &:last-child
+                margin-right: 0
+            + {e(-group)}
+                margin-top: 0
+        +e(-input)
+            min-width: 100px
+            width: auto
+        +e(-label)
+            margin-right: 20px
+            margin-left: 20px
+            &:first-child
+                margin-left: 0
     
 
     
@@ -278,7 +342,7 @@ select
     
         &:checked
             + {e(-box)}
-                border-color: #1e7cc4
+                border-color: clr-primary
                 &:after
                     background: @border-color
     [type="radio"]

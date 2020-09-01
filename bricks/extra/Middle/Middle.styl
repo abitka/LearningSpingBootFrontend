@@ -1,5 +1,6 @@
 .{$px}Middle
     clearfix()
+    overflow: hidden
 
     &-column
         float: left
@@ -16,7 +17,7 @@
     &-top
         padding: 20px 0 20px
         margin-bottom: 20px
-        background: clr-primary
+        background: clr-primary img('bg', 'books.png') left center repeat-x
         min-height: 130px
         display: flex
         align-items: center
@@ -31,6 +32,47 @@
             line-height: 45px;
             text-transform: uppercase;
             letter-spacing: 1.12px;
+            &:after
+                display: none
+    &_form
+        visibility: visible
+        //background: linear-gradient(0deg, rgba(clr-primary,0) 40%, rgba(clr-primary,1) 80%);
+        position: relative
+        &:after
+            position: absolute
+            content: ''
+            display: block
+            background: img('bg', 'entry.jpg') center center no-repeat;
+            background-size: cover;
+            left: 0
+            right: 0
+            top: 0
+            max-height: 40%;
+            height: 300px
+            z-index: 1
+            +m('phone')
+                background: img('bg', 'entry_phone.jpg') center center no-repeat;
+        &:before
+            position: absolute
+            content: ''
+            display: block
+            background: linear-gradient(0deg, rgba(clr-white,1) 0%, rgba(clr-white,0) 60%), rgba(clr-black, 0.35)
+            left: 0
+            right: 0
+            top: 0
+            max-height: 40%;
+            height: 300px
+            z-index: 2
+            
+        +e(-top)
+            background: none
+            position: relative
+            z-index: 3
+            margin-bottom: 0
+        +e(-main)
+            position: relative
+            z-index: 3
+            margin-top: 0
     &-title
         font-size: 23px;
         font-weight: 500;
