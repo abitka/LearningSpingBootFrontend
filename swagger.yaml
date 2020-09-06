@@ -1,0 +1,596 @@
+swagger: '2.0'
+info:
+  title: Books Api Server
+  description: Sample API Server
+  version: 1.0.0
+  contact:
+    email: cryptocoin62@gmail.com
+# basePath: /api
+# schemes:
+#   - http
+consumes:
+  - "application/json; charset=utf-8"
+produces:
+  - "application/json; charset=utf-8"
+paths:
+
+  /books/recommended:
+    get:
+      tags:
+        - recomended
+      summary: Show recommended books
+      operationId: recomended
+      produces:
+      - application/json
+      parameters:
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description:  OK
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /books/recent:
+    get:
+      tags:
+        - recent
+      summary: Show recent books
+      operationId: recent
+      produces:
+      - application/json
+      parameters:
+        - in: query
+          name: from
+          type: string
+          format: date-time
+        - in: query
+          name: to
+          type: string
+          format: date-time
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description:  OK
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /books/popular:
+    get:
+      tags:
+        - popular
+      summary: Show popular books
+      operationId: popular
+      produces:
+      - application/json
+      parameters:
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /books/genre/{id}:
+    get:
+      tags:
+        - genreID
+      summary: Show sort by genre ID
+      operationId: genreID
+      produces:
+      - application/json
+      parameters:
+        - in: path
+          required: true
+          name: id
+          type: string
+        - in: query
+          name: query
+          type: integer
+          description: Sort by ID of genre
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /books/author/{id}:
+    get:
+      tags:
+        - authorID
+      summary: Show sort by author ID
+      operationId: authorID
+      parameters:
+        - in: path
+          required: true
+          name: id
+          type: string
+        - in: query
+          name: query
+          type: integer
+          description: Sort by ID of author
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /requestContactConfirmation:
+    post:
+      tags:
+        - contactConfirm
+      summary: Request Contact Confirmation
+      operationId: contactConfirm
+      parameters:
+        - in: body
+          name: contact
+          description: Phone number or email.
+          schema:
+            type: object
+            required:
+              - contact
+            properties:
+              contact:
+                type: string
+                example: "cryptocoin62@gmail.com"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: true
+        '400':
+          description: Error
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: false
+              error:
+                type: string
+                example: "E-mail или номер указан неверно"
+
+  /approveContact:
+    post:
+      tags:
+        - approveContact
+      summary: Request Approve Contact
+      operationId: approveContact
+      parameters:
+        - in: body
+          name: contact
+          description: Phone number or email.
+          schema:
+            type: object
+            required:
+              - contact
+              - code
+            properties:
+              contact:
+                type: string
+                example: "cryptocoin62@gmail.com"
+              code:
+                type: string
+                example: "12345"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: true
+        '400':
+          description: Error
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: false
+              return:
+                type: boolean
+                example: true
+              error:
+                type: string
+                example: "Код подтверждения устарел. Запросите новый"
+
+  /bookReview:
+    post:
+      tags:
+        - bookReview
+      summary: Book review
+      operationId: bookReview
+      parameters:
+        - in: body
+          name: review
+          schema:
+            type: object
+            required:
+              - BookID
+              - Text
+            properties:
+              BookID:
+                type: string
+              Text:
+                type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: true
+        '400':
+          description: Error
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: false
+              error:
+                type: string
+                example: "Отзыв слишком короткий. Напишите, пожалуйста, более развёрнутый отзыв"
+
+  /transactions:
+    get:
+      tags:
+        - transaction
+      summary: Show transaction
+      operationId: transaction
+      produces:
+      - application/json
+      parameters:
+        - in: query
+          name: sort
+          type: string
+          default: "asc"
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Transactions"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /books/tag/{id}:
+    get:
+      tags:
+        - tagID
+      summary: Show book by tag ID
+      operationId: tagID
+      parameters:
+        - in: path
+          required: true
+          name: id
+          type: string
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /changeBookStatus:
+    post:
+      tags:
+        - bookStatus
+      summary: Change Book Status
+      operationId: bookStatus
+      parameters:
+        - in: body
+          name: status
+          schema:
+            $ref: "#/definitions/Status"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: true
+        '400':
+          description: Error
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: false
+              error:
+                type: string
+                example: "Нельзя отложить купленную книгу"
+
+  /search:
+    get:
+      tags:
+        - search
+      summary: Search
+      operationId: search
+      parameters:
+        - in: query
+          name: query
+          type: string
+        - in: query
+          name: offset
+          type: integer
+          required: false
+          description: The number of items to skip before starting to collect the result set.
+        - in: query
+          name: limit
+          type: integer
+          required: false
+          description: The numbers of items to return.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Data"
+        '400':
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /payment:
+    post:
+      tags:
+        - payment
+      summary: Show payments
+      operationId: payment
+      parameters:
+        - in: body
+          name: payment
+          schema:
+            type: object
+            required:
+              - hash
+              - summ
+              - time
+            properties:
+              Hash:
+                type: string
+                example: "qiyh4XPJGsOZ2MEAyLkfWqeQ"
+              Summ:
+                type: integer
+                format: int
+                example: 12345
+              Time:
+                type: string
+                format: date-time
+                example: "2020-09-02T14:36:29.590Z"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: true
+        '400':
+          description: Error
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+                example: false
+              error:
+                type: string
+                example: "Указанный тэг не найден"
+
+definitions:
+  Transactions:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int
+        example: 10
+      transactions:
+        type: array
+        items:
+          $ref: "#/definitions/Transaction"
+  Transaction:
+    type: object
+    properties:
+      time:
+        type: string
+      value:
+        type: integer
+        format: int
+      description:
+        type: string
+    example:
+      time: "1595942297"
+      value: -300
+      description: "Покупка книги Интервью Петра I телеканалу RTVI"
+  Data:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int
+        example: 1
+      books:
+        type: array
+        items:
+          $ref: "#/definitions/Book"
+  Book:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int
+      slug:
+        type: string
+      title:
+        type: string
+      image:
+        type: string
+      discount:
+        type: integer
+        format: int
+      isBestseller:
+        type: boolean
+      rating:
+        type: integer
+        format: int
+      status:
+        type: string
+      price:
+        type: integer
+        format: int
+      discountPrice:
+        type: integer
+        format: int
+    example:
+      id: 1
+      slug: "priklyucheniya_programmistov"
+      title: "Восстание Емельяна Пугачёва"
+      image: "/img/34/54/12/2323.jpg"
+      discoint: 30
+      isBestseller: true
+      rating: 3
+      status: "KEPT"
+      price: 250
+      discountPrice: 175
+
+  Status:
+    type: object
+    properties:
+      status:
+        type: string
+        example: "KEPT"
+      array:
+        type: array
+        items:
+          $ref: "#/definitions/BooksID"
+    required:
+      - status
+  BooksID:
+    type: array
+    items:
+      type: integer
+      format: int
+      example:
+        - 1
+        - 2
+        - 3
+
+  Error:
+    type: object
+    properties:
+      result:
+        type: boolean
+        example: true
+      error:
+        type: string
+        example: "Какая-то ошибка"
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /SortedMap/SpringFrontend/1.0.0
+schemes:
+ - https
+ - http
