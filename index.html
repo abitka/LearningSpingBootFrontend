@@ -23,11 +23,11 @@
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Light.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=34050364">
-  <link rel="stylesheet" href="/assets/css/basic.min.css?v=34050364">
-  <link rel="stylesheet" href="/assets/css/extra.min.css?v=34050364"><!--[if lt IE 9]>
+  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=64223515">
+  <link rel="stylesheet" href="/assets/css/basic.min.css?v=64223515">
+  <link rel="stylesheet" href="/assets/css/extra.min.css?v=64223515"><!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script defer src="/assets/js/scripts.min.js?v=34050364"></script>
+  <script defer src="/assets/js/scripts.min.js?v=64223515"></script>
 </head>
 <body class="Site">
   <!--if lt IE 8
@@ -43,15 +43,15 @@
     <div class="Header-rowMain">
       <div class="wrap">
         <div class="row">
-          <div class="row-block Header-logo"><a class="logo" href="index.html"><img class="logo-image" src="/assets/img/logo.png" alt="logo.png"/><span class="logo-text">BOOKSHOP</span></a>
+          <div class="row-block Header-logo"><a class="logo" href="/"><img class="logo-image" src="/assets/img/logo.png" alt="logo.png"/><span class="logo-text">BOOKSHOP</span></a>
           </div>
           <div class="Header-searchWrap row-block">
             <div class="Header-searchLink"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><g><g><path fill="#b8b8b8" d="M17.812 17.852c.25.268.25.69 0 .948a.622.622 0 0 1-.457.2.64.64 0 0 1-.457-.2l-5.364-5.494a7.07 7.07 0 0 1-4.32 1.47C3.232 14.777 0 11.457 0 7.389 0 3.321 3.232 0 7.214 0c3.983 0 7.214 3.32 7.214 7.388 0 1.94-.74 3.7-1.926 5.015zM7.214 13.44c3.264 0 5.909-2.708 5.909-6.05 0-3.344-2.655-6.052-5.909-6.052-3.264 0-5.908 2.72-5.908 6.051 0 3.332 2.644 6.051 5.908 6.051z"/></g></g></svg>
             </div>
             <div class="Header-search">
               <div class="search">
-                <form class="form form_search" action="#" method="post">
-                  <input class="search-input" id="query" name="query" type="text" placeholder="Search over 30 million book titles"/>
+                <form class="form form_search" action="#" method="post" data-searchlimit="20">
+                  <input class="search-input" id="query" name="query" type="text" placeholder="Search over 30 million book titles" value=""/>
                   <button class="search-button" type="submit" name="search" id="search">Поиск
                   </button>
                 </form>
@@ -100,12 +100,12 @@
             </h2>
           </div>
           <div class="Slider Slider_carousel">
-            <div class="Slider-box Cards">
+            <div class="Slider-box Cards" data-load="recommended" data-loadoffset="8" data-loadlimit="20">
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Техника</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Техника</a>
                       </strong>
                       <div class="Card-description">Кондратенко Александр Петрович
                       </div>
@@ -117,11 +117,11 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
                       <div class="Card-sale">30% скидка
                       </div></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
                       </strong>
                       <div class="Card-description">Ваулина, Дули, Подоляко
                       </div>
@@ -133,9 +133,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -147,9 +147,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -161,9 +161,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Большое путешествие по телу человека</a>
                       </strong>
                       <div class="Card-description">Джон Фарндон
                       </div>
@@ -175,9 +175,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -189,9 +189,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -203,9 +203,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Большое путешествие по телу человека</a>
                       </strong>
                       <div class="Card-description">Джон Фарндон
                       </div>
@@ -218,6 +218,10 @@
             </div>
             <div class="Slider-navigateWrap">
               <div class="Slider-navigate">
+              </div>
+            </div>
+            <div class="Slider-load">
+              <div class="Slider-load-text">Идет загрузка данных
               </div>
             </div>
           </div>
@@ -226,14 +230,14 @@
             </h2>
           </div>
           <div class="Slider Slider_carousel">
-            <div class="Slider-box Cards">
+            <div class="Slider-box Cards" data-load="recent" data-loadoffset="8" data-loadlimit="20">
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
                       <div class="Card-sale">30% скидка
                       </div></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Техника</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Техника</a>
                       </strong>
                       <div class="Card-description">Кондратенко Александр Петрович
                       </div>
@@ -245,9 +249,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
                       </strong>
                       <div class="Card-description">Ваулина, Дули, Подоляко
                       </div>
@@ -259,9 +263,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -273,9 +277,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -287,9 +291,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -301,9 +305,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -315,9 +319,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -329,9 +333,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -343,9 +347,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Большое путешествие по телу человека</a>
                       </strong>
                       <div class="Card-description">Джон Фарндон
                       </div>
@@ -358,6 +362,10 @@
             </div>
             <div class="Slider-navigateWrap">
               <div class="Slider-navigate">
+              </div>
+            </div>
+            <div class="Slider-load">
+              <div class="Slider-load-text">Идет загрузка данных
               </div>
             </div>
           </div>
@@ -366,16 +374,16 @@
             </h2>
           </div>
           <div class="Slider Slider_carousel">
-            <div class="Slider-box Cards">
+            <div class="Slider-box Cards" data-load="popular" data-loadoffset="8" data-loadlimit="20">
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
                       <div class="Card-sale">30% скидка
                       </div>
                       <div class="Card-ribbon"><span class="Card-ribbonText">Бестселлер</span>
                       </div></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Техника</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Техника</a>
                       </strong>
                       <div class="Card-description">Кондратенко Александр Петрович
                       </div>
@@ -387,9 +395,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
                       </strong>
                       <div class="Card-description">Ваулина, Дули, Подоляко
                       </div>
@@ -401,9 +409,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -415,11 +423,11 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
                       <div class="Card-ribbon"><span class="Card-ribbonText">Бестселлер</span>
                       </div></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -431,9 +439,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
                       </strong>
                       <div class="Card-description">Ваулина, Дули, Подоляко
                       </div>
@@ -445,9 +453,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                       </strong>
                       <div class="Card-description">Быкова, Дули, Эванс
                       </div>
@@ -459,11 +467,11 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
                       <div class="Card-ribbon"><span class="Card-ribbonText">Бестселлер</span>
                       </div></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Великая Отечественная война. 1941-1945</a>
                       </strong>
                       <div class="Card-description">Солопенко Алла, Меркулов Дмитрий
                       </div>
@@ -475,9 +483,9 @@
               </div>
               <div class="Slider-item">
                 <div class="Slider-content">
-                  <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+                  <div class="Card"><a class="Card-picture" href="/books/slug.html"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                     <div class="Card-content">
-                      <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
+                      <strong class="Card-title"><a href="/books/slug.html">Большое путешествие по телу человека</a>
                       </strong>
                       <div class="Card-description">Джон Фарндон
                       </div>
@@ -492,108 +500,112 @@
               <div class="Slider-navigate">
               </div>
             </div>
+            <div class="Slider-load">
+              <div class="Slider-load-text">Идет загрузка данных
+              </div>
+            </div>
           </div>
-          <h2 class="Section-title">Книги по тегам
-          </h2>
-          <div class="Tags">
-            <div class="Tag Tag_xs"><a href="#">современная литература</a>
-            </div>
-            <div class="Tag Tag_sm"><a href="#">классическая литература</a>
-            </div>
-            <div class="Tag"><a href="#">зарубежная литература</a>
-            </div>
-            <div class="Tag Tag_md"><a href="#">фэнтези</a>
-            </div>
-            <div class="Tag Tag_lg"><a href="#">английская литература</a>
-            </div>
-            <div class="Tag"><a href="#">русская литература</a>
-            </div>
-            <div class="Tag"><a href="#">американская литература</a>
-            </div>
-            <div class="Tag"><a href="#">фантастика</a>
-            </div>
-            <div class="Tag Tag_md"><a href="#">детская литература</a>
-            </div>
-            <div class="Tag"><a href="#">детектив</a>
-            </div>
-            <div class="Tag Tag_sm"><a href="#">любовь</a>
-            </div>
-            <div class="Tag Tag_sm"><a href="#">мистика</a>
-            </div>
-            <div class="Tag"><a href="#">юмор</a>
-            </div>
-            <div class="Tag"><a href="#">приключения</a>
-            </div>
-            <div class="Tag"><a href="#">сказка</a>
-            </div>
-            <div class="Tag"><a href="#">французская литература</a>
-            </div>
-            <div class="Tag Tag_xs"><a href="#">англия</a>
-            </div>
-            <div class="Tag"><a href="#">художественная литература</a>
-            </div>
-            <div class="Tag Tag_xs"><a href="#">психология</a>
-            </div>
-            <div class="Tag"><a href="#">философия</a>
-            </div>
-            <div class="Tag Tag_lg"><a href="#">экранизировано</a>
-            </div>
-            <div class="Tag"><a href="#">любимое</a>
-            </div>
-            <div class="Tag"><a href="#">антиутопия</a>
-            </div>
-            <div class="Tag Tag_xs"><a href="#">books you must read before you die</a>
-            </div>
-            <div class="Tag"><a href="#">роман</a>
-            </div>
-            <div class="Tag Tag_md"><a href="#">франция</a>
-            </div>
-            <div class="Tag"><a href="#">дайте две</a>
-            </div>
-            <div class="Tag"><a href="#">young adult</a>
-            </div>
-            <div class="Tag Tag_lg"><a href="#">война</a>
-            </div>
-            <div class="Tag"><a href="#">история</a>
-            </div>
-            <div class="Tag Tag_sm"><a href="#">флэшмоб 2016</a>
-            </div>
-            <div class="Tag"><a href="#">детство</a>
-            </div>
-            <div class="Tag"><a href="#">жизнь</a>
-            </div>
-            <div class="Tag"><a href="#">драма</a>
-            </div>
-            <div class="Tag Tag_md"><a href="#">россия</a>
-            </div>
-            <div class="Tag Tag_md"><a href="#">книжное путешествие</a>
-            </div>
-            <div class="Tag"><a href="#">советская литература</a>
-            </div>
-            <div class="Tag"><a href="#">триллер</a>
-            </div>
-            <div class="Tag"><a href="#">америка</a>
-            </div>
-            <div class="Tag Tag_sm"><a href="#">немецкая литература</a>
-            </div>
-            <div class="Tag Tag_xs"><a href="#">вампиры</a>
-            </div>
-            <div class="Tag"><a href="#">школьная программа</a>
-            </div>
-            <div class="Tag Tag_xs"><a href="#">рассказы</a>
-            </div>
-            <div class="Tag"><a href="#">магия</a>
-            </div>
-            <div class="Tag"><a href="#">дети</a>
-            </div>
-            <div class="Tag"><a href="#">русская классика</a>
-            </div>
-            <div class="Tag"><a href="#">флэшмоб 2015</a>
-            </div>
-            <div class="Tag"><a href="#">биография</a>
-            </div>
-            <div class="Tag"><a href="#">english</a>
-            </div>
+        </div>
+        <h2 class="Middle-title">Книги по тегам
+        </h2>
+        <div class="Tags" id="tags">
+          <div class="Tag Tag_xs"><a href="/tags/index.html">современная литература</a>
+          </div>
+          <div class="Tag Tag_sm"><a href="/tags/index.html">классическая литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">зарубежная литература</a>
+          </div>
+          <div class="Tag Tag_md"><a href="/tags/index.html">фэнтези</a>
+          </div>
+          <div class="Tag Tag_lg"><a href="/tags/index.html">английская литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">русская литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">американская литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">фантастика</a>
+          </div>
+          <div class="Tag Tag_md"><a href="/tags/index.html">детская литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">детектив</a>
+          </div>
+          <div class="Tag Tag_sm"><a href="/tags/index.html">любовь</a>
+          </div>
+          <div class="Tag Tag_sm"><a href="/tags/index.html">мистика</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">юмор</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">приключения</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">сказка</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">французская литература</a>
+          </div>
+          <div class="Tag Tag_xs"><a href="/tags/index.html">англия</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">художественная литература</a>
+          </div>
+          <div class="Tag Tag_xs"><a href="/tags/index.html">психология</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">философия</a>
+          </div>
+          <div class="Tag Tag_lg"><a href="/tags/index.html">экранизировано</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">любимое</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">антиутопия</a>
+          </div>
+          <div class="Tag Tag_xs"><a href="/tags/index.html">books you must read before you die</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">роман</a>
+          </div>
+          <div class="Tag Tag_md"><a href="/tags/index.html">франция</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">дайте две</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">young adult</a>
+          </div>
+          <div class="Tag Tag_lg"><a href="/tags/index.html">война</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">история</a>
+          </div>
+          <div class="Tag Tag_sm"><a href="/tags/index.html">флэшмоб 2016</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">детство</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">жизнь</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">драма</a>
+          </div>
+          <div class="Tag Tag_md"><a href="/tags/index.html">россия</a>
+          </div>
+          <div class="Tag Tag_md"><a href="/tags/index.html">книжное путешествие</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">советская литература</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">триллер</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">америка</a>
+          </div>
+          <div class="Tag Tag_sm"><a href="/tags/index.html">немецкая литература</a>
+          </div>
+          <div class="Tag Tag_xs"><a href="/tags/index.html">вампиры</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">школьная программа</a>
+          </div>
+          <div class="Tag Tag_xs"><a href="/tags/index.html">рассказы</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">магия</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">дети</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">русская классика</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">флэшмоб 2015</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">биография</a>
+          </div>
+          <div class="Tag"><a href="/tags/index.html">english</a>
           </div>
         </div>
       </main>
@@ -602,7 +614,7 @@
   <footer class="Footer">
     <div class="wrap">
       <div class="row Footer-main">
-        <div class="row-block"><a class="logo logo_footer Footer-logo" href="index.html"><img class="logo-image" src="/assets/img/logo_footer.png" alt="logo_footer.png"/><span class="logo-text">BOOKSHOP</span></a>
+        <div class="row-block"><a class="logo logo_footer Footer-logo" href="/"><img class="logo-image" src="/assets/img/logo_footer.png" alt="logo_footer.png"/><span class="logo-text">BOOKSHOP</span></a>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid  unt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
           </p>
           <ul class="menu menu_img menu_smallImg Footer-menuSoc">
@@ -620,29 +632,29 @@
         </div>
         <div class="row-block">
           <ul class="menu menu_vt Footer-menu">
-            <li class="menu-item"><a class="menu-link" href="#">Главная</a>
+            <li class="menu-item"><a class="menu-link" href="/index.html">Главная</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Жанры</a>
+            <li class="menu-item"><a class="menu-link" href="/genres/index.html">Жанры</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Новинки</a>
+            <li class="menu-item"><a class="menu-link" href="/books/recent.html">Новинки</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Популярное</a>
+            <li class="menu-item"><a class="menu-link" href="/books/popular.html">Популярное</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Авторы</a>
+            <li class="menu-item"><a class="menu-link" href="/authors/index.html">Авторы</a>
             </li>
           </ul>
         </div>
         <div class="row-block">
           <ul class="menu menu_vt Footer-menu">
-            <li class="menu-item"><a class="menu-link" href="#">Войти</a>
+            <li class="menu-item"><a class="menu-link" href="/signin.html">Войти</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Публичная оферта</a>
+            <li class="menu-item"><a class="menu-link" href="/documents/index.html">Документы</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Политика обработки персональных данных</a>
+            <li class="menu-item"><a class="menu-link" href="/about.html">О компании</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">О компании</a>
+            <li class="menu-item"><a class="menu-link" href="/faq.html">Помощь</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Помощь</a>
+            <li class="menu-item"><a class="menu-link" href="/contacts.html">Контакты</a>
             </li>
           </ul>
         </div>
@@ -653,7 +665,7 @@
       </div>
     </div>
   </footer>
-  <script src="/assets/plg/jQuery/jquery-3.5.0.slim.min.js"></script>
+  <script src="/assets/plg/jQuery/jquery-3.5.1.min.js"></script>
   <!--+menu(-->
   <!--    'Это раз',-->
   <!--    'Это два',-->

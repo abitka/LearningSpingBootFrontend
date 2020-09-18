@@ -2,6 +2,8 @@
     font-family Montserrat
     align-items: center
     display: flex
+    &Group
+        text-align: center
     &-stars
         white-space: nowrap
     &-star
@@ -22,9 +24,21 @@
         font-size: font-nrm;
         font-weight: 500;
         text-transform: uppercase;
+        &_success
+            color: clr-success
+            text-transform: none
+            font-weight: 400
+        &_error
+            color: clr-danger
+            text-transform: none
+            font-weight: 400
     
     &_comment
         visibility: visible
+        +e(-star)
+            svg
+                width: 15px
+                height: 15px
     &_inputClick
         +e(-star)
             path
@@ -32,7 +46,6 @@
     &_input
         position: relative
         display: inline-block
-        margin-left: 20px
         input
             width: 19px
             height: 19px
@@ -43,3 +56,9 @@
                 ~ {e(-star)}
                     path
                         fill: #f0f0f0
+    &_noStyleLink
+        cursor: default
+        +m('desktop')
+            &:hover
+                border-bottom-color: transparent !important
+    

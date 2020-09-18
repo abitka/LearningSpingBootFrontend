@@ -42,6 +42,37 @@
     
     &-content
         visibility: visible
+    &-load
+        display: none
+        position: absolute
+        justify-content: center
+        align-items: center
+        text-align: center
+        left: -30px
+        bottom: 0
+        right: -30px
+        padding-right: 40px
+        padding-left: 40px
+        top: 0
+        z-index: 700
+        &-text
+            color: text-main
+            background: clr-white
+            border-radius: 1000px
+            line-height: 1.3em
+            padding: 40px
+            box-shadow: 0px 5px 10px rgba(#000, 0.4)
+            font-size: font-xl
+            font-weight: 600
+            +m('phone')
+                font-size: font-lg
+                padding: 25px
+    //&_load
+    //    position: relative
+    //    +e(-load)
+    //        display: flex
+    
+    
     &_main
         height: 671px
         +e(-box)

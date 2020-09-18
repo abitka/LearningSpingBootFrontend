@@ -65,6 +65,39 @@
             +b(form)
                 &-label
                     color: text-main
+        &-links
+            margin-top: 0
+            width: auto
+            margin-left: 30px
+            +m('phone')
+                justify-content: center
+                width: 100%
+                margin-left: 0
+                margin-top: 20px
+        &-link
+            display: inline-block
+            color: clr-primary
+            margin-right: 20px
+            position: relative
+            &:after
+                display: block
+                content: '|'
+                color: clr-primary
+                position: absolute
+                right: -15px
+                height: 100%
+                width: 10px
+                text-align: center
+                top: 0
+            &_ACTIVE
+                color: text-main
+                
+    
+            &:last-child
+                margin-right: 0
+                &:after
+                    display: none
+
         +e(-title)
             margin-right: auto
             margin-bottom: 0
@@ -267,4 +300,6 @@
         +m('phone')
             padding-bottom: 50px
 
+    & + &_close
+        margin-top: 30px
 

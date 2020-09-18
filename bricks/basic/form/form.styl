@@ -94,7 +94,7 @@ select
         &_hide
             display: none
         &_error
-            border-color: clr-danger
+            border-color: clr-danger !important
         &_date
             width: 100px !important
             text-align: center
@@ -109,19 +109,19 @@ select
         padding-top: 18px
         padding-bottom: 18px
         border-radius: $borderRadius
-        border: $borderWidth solid $borderColor
+        border-bottom: $borderWidth solid $borderColor
         font-size: $fontSzInput
         background-color: $bgColor
         line-height: 1.2em
         &:focus
             outline:none
         &_error
-            border-color: clr-danger
+            border-color: clr-danger !important
     +e(-select)
         width: 100%
         height: $heightInput
         box-sizing: border-box
-        padding: $paddingBox[0] ($paddingBox[1] - 4)
+        padding: $paddingBox[0] $paddingBox[1]
         border-radius: $borderRadius
         border: $borderWidth solid $borderColor
         background: $bgColor

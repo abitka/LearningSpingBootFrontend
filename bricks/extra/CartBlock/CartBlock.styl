@@ -14,7 +14,35 @@
             height: auto
         + {e(-block)}
             margin-left: 23px
+        &_text
+            min-width: 150px
+            +m('tablet')
+                min-width: auto
+            +e(-img)
+                min-width: 30px
+                +m('tablet')
+                    min-width: auto
+            +e(-budget)
+                position: absolute
+                top: 100%
+                width: 100%
+                margin-top: 3px
+            
+            
+    
 
+    
+    &-text
+        color: text-main
+        font-weight: 500
+        margin-left: 10px
+        font-size: font-nrp
+        +m('tablet')
+            display: none
+    &-budget
+        +m('tablet')
+            display: none
+    
     
     &-amount
         background: clr-primary

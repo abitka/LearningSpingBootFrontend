@@ -46,7 +46,19 @@
                         background-color: lighten(saturate(@border-color[0], 20%), 80%)
                         border-color: lighten(saturate(@border-color[0], 20%), 80%)
                         color: color !important
-
+        &.btn_check
+            if outline
+                background-color: lighten(saturate(@border-color[0], 20%), 80%)
+                border-color: lighten(saturate(@border-color[0], 20%), 80%)
+                color: color !important
+            else
+                background-color: lighten(saturate(@border-color[0], 20%), 20%)
+                border-color: lighten(saturate(@border-color[0], 20%), 20%)
+                &.btn_outline
+                    background-color: lighten(saturate(@border-color[0], 20%), 80%)
+                    border-color: lighten(saturate(@border-color[0], 20%), 80%)
+                    color: color !important
+    
     btnSize(addDefault)
         font-size: (@font-size + addDefault)
         padding: ($buttonPadding[0] + addDefault) ($buttonPadding[1] + (2 * addDefault))
@@ -76,11 +88,17 @@
     &:focus
         outline:none
     
+    &Error
+        color: clr-danger
+        margin-top: 10px
+        display: block
+        font-size: font-nrm
+    
     &-icon
         margin: 0 !important
         margin-right: 10px !important
         height: 24px
-        width: 24px
+        min-width: 24px
         img
             max-height: 100%
             max-width: 100%
@@ -116,6 +134,16 @@
     &_default
         btnHover: clr-white #8e9096
         border-color: #e0e0e0
+    &_white
+        btnHover: clr-white clr-primary
+        border-color: clr-white
+        padding-left: 10px
+        padding-right: 10px
+        +m('desktop')
+            &:hover
+                background-color: lighten(saturate(clr-primary, 20%), 80%)
+        &.btn_check
+            background-color: lighten(saturate(clr-primary, 20%), 80%)
     
     
     &_info
@@ -137,6 +165,21 @@
         
     &_dark
         btnHover:  #a5abba clr-white
+    &_like
+    &_dislike
+        &{e(_white)}
+            +m('desktop')
+                &:hover
+                    background-color: #fff
+    &_like
+        +e(-icon)
+            position: relative
+            top: -3px
+    &_dislike
+        +e(-icon)
+            position: relative
+            top: 4px
+    
     &_narrow
         padding-left: 23px
         padding-right: 23px
@@ -153,7 +196,7 @@
                 cursor: default
 
     &_sm
-        btnSize: -4px
+        btnSize: -3px
         
     &_nr
         btnSize: -2px

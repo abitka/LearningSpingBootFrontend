@@ -23,11 +23,11 @@
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Light.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=03345748">
-  <link rel="stylesheet" href="/assets/css/basic.min.css?v=03345748">
-  <link rel="stylesheet" href="/assets/css/extra.min.css?v=03345748"><!--[if lt IE 9]>
+  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=56375974">
+  <link rel="stylesheet" href="/assets/css/basic.min.css?v=56375974">
+  <link rel="stylesheet" href="/assets/css/extra.min.css?v=56375974"><!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script defer src="/assets/js/scripts.min.js?v=03345748"></script>
+  <script defer src="/assets/js/scripts.min.js?v=56375974"></script>
 </head>
 <body class="Site">
   <!--if lt IE 8
@@ -43,15 +43,15 @@
     <div class="Header-rowMain">
       <div class="wrap">
         <div class="row">
-          <div class="row-block Header-logo"><a class="logo" href="index.html"><img class="logo-image" src="/assets/img/logo.png" alt="logo.png"/><span class="logo-text">BOOKSHOP</span></a>
+          <div class="row-block Header-logo"><a class="logo" href="/"><img class="logo-image" src="/assets/img/logo.png" alt="logo.png"/><span class="logo-text">BOOKSHOP</span></a>
           </div>
           <div class="Header-searchWrap row-block">
             <div class="Header-searchLink"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><g><g><path fill="#b8b8b8" d="M17.812 17.852c.25.268.25.69 0 .948a.622.622 0 0 1-.457.2.64.64 0 0 1-.457-.2l-5.364-5.494a7.07 7.07 0 0 1-4.32 1.47C3.232 14.777 0 11.457 0 7.389 0 3.321 3.232 0 7.214 0c3.983 0 7.214 3.32 7.214 7.388 0 1.94-.74 3.7-1.926 5.015zM7.214 13.44c3.264 0 5.909-2.708 5.909-6.05 0-3.344-2.655-6.052-5.909-6.052-3.264 0-5.908 2.72-5.908 6.051 0 3.332 2.644 6.051 5.908 6.051z"/></g></g></svg>
             </div>
             <div class="Header-search">
               <div class="search">
-                <form class="form form_search" action="#" method="post">
-                  <input class="search-input" id="query" name="query" type="text" placeholder="Search over 30 million book titles"/>
+                <form class="form form_search" action="#" method="post" data-searchlimit="20">
+                  <input class="search-input" id="query" name="query" type="text" placeholder="Search over 30 million book titles" value=""/>
                   <button class="search-button" type="submit" name="search" id="search">Поиск
                   </button>
                 </form>
@@ -92,12 +92,6 @@
     </div>
   </header>
   <div class="Middle">
-    <div class="Middle-top">
-      <div class="wrap">
-        <h1 class="Middle-title">Книги по жанру
-        </h1>
-      </div>
-    </div>
     <div class="wrap">
       <main class="Middle-main">
         <ul class="breadcrumbs">
@@ -110,13 +104,15 @@
           <li class="breadcrumbs-item breadcrumbs-item_current"><span>Детективы</span>
           </li>
         </ul>
+        <header class="Middle-header">
+          <h1 class="Middle-title">Детективы
+          </h1>
+        </header>
         <div class="Section">
-          <header class="Section-header">
-            <h2 class="Section-title">Детективы
-            </h2>
-          </header>
-          <div class="Cards">
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+          <div class="Cards Cards_refresh">
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Техника</a>
                 </strong>
@@ -126,9 +122,11 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                 <div class="Card-sale">30% скидка
-                </div></a>
+                </div>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Английский язык. 5 класс. Английский в фокусе. Рабочая тетрадь. ФГОС</a>
                 </strong>
@@ -138,7 +136,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                 </strong>
@@ -148,11 +148,13 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                 <div class="Card-sale">30% скидка
                 </div>
                 <div class="Card-ribbon"><span class="Card-ribbonText">Бестселлер</span>
-                </div><a class="Card-status" title="Куплена"><img src="/assets/img/icons/check.svg" alt="check.svg"/></a></a>
+                </div><a class="Card-status" title="Куплена"><img src="/assets/img/icons/check.svg" alt="check.svg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
                 </strong>
@@ -162,7 +164,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
                 </strong>
@@ -172,7 +176,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/><a class="Card-status" title="В корзине"><img src="/assets/img/icons/shopping-basket.svg" alt="shopping-basket.svg"/></a></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a><a class="Card-status" title="В корзине"><img src="/assets/img/icons/shopping-basket.svg" alt="shopping-basket.svg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
                 </strong>
@@ -182,9 +188,11 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
                 <div class="Card-ribbon"><span class="Card-ribbonText">Бестселлер</span>
-                </div></a>
+                </div>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
                 </strong>
@@ -194,7 +202,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Английский язык. 4 класс. Английский в фокусе. Рабочая тетрадь</a>
                 </strong>
@@ -204,7 +214,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Великая Отечественная война. 1941-1945</a>
                 </strong>
@@ -214,7 +226,9 @@
                 </div>
               </div>
             </div>
-            <div class="Card"><a class="Card-picture" href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/><a class="Card-status" title="Отложена"><img src="/assets/img/icons/heart.svg" alt="heart.svg"/></a></a>
+            <div class="Card">
+              <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a><a class="Card-status" title="Отложена"><img src="/assets/img/icons/heart.svg" alt="heart.svg"/></a>
+              </div>
               <div class="Card-content">
                 <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
                 </strong>
@@ -224,7 +238,7 @@
                 </div>
               </div>
             </div>
-            <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#">Показать еще</a>
+            <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#" data-refreshshow="genre" data-refreshoffset="10" data-refreshlimit="20" data-refreshid="1020">Показать еще</a>
             </div>
           </div>
         </div>
@@ -234,7 +248,7 @@
   <footer class="Footer">
     <div class="wrap">
       <div class="row Footer-main">
-        <div class="row-block"><a class="logo logo_footer Footer-logo" href="index.html"><img class="logo-image" src="/assets/img/logo_footer.png" alt="logo_footer.png"/><span class="logo-text">BOOKSHOP</span></a>
+        <div class="row-block"><a class="logo logo_footer Footer-logo" href="/"><img class="logo-image" src="/assets/img/logo_footer.png" alt="logo_footer.png"/><span class="logo-text">BOOKSHOP</span></a>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid  unt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
           </p>
           <ul class="menu menu_img menu_smallImg Footer-menuSoc">
@@ -252,29 +266,29 @@
         </div>
         <div class="row-block">
           <ul class="menu menu_vt Footer-menu">
-            <li class="menu-item"><a class="menu-link" href="#">Главная</a>
+            <li class="menu-item"><a class="menu-link" href="/index.html">Главная</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Жанры</a>
+            <li class="menu-item"><a class="menu-link" href="/genres/index.html">Жанры</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Новинки</a>
+            <li class="menu-item"><a class="menu-link" href="/books/recent.html">Новинки</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Популярное</a>
+            <li class="menu-item"><a class="menu-link" href="/books/popular.html">Популярное</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Авторы</a>
+            <li class="menu-item"><a class="menu-link" href="/authors/index.html">Авторы</a>
             </li>
           </ul>
         </div>
         <div class="row-block">
           <ul class="menu menu_vt Footer-menu">
-            <li class="menu-item"><a class="menu-link" href="#">Войти</a>
+            <li class="menu-item"><a class="menu-link" href="/signin.html">Войти</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Публичная оферта</a>
+            <li class="menu-item"><a class="menu-link" href="/documents/index.html">Документы</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Политика обработки персональных данных</a>
+            <li class="menu-item"><a class="menu-link" href="/about.html">О компании</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">О компании</a>
+            <li class="menu-item"><a class="menu-link" href="/faq.html">Помощь</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#">Помощь</a>
+            <li class="menu-item"><a class="menu-link" href="/contacts.html">Контакты</a>
             </li>
           </ul>
         </div>
@@ -285,5 +299,5 @@
       </div>
     </div>
   </footer>
-  <script src="/assets/plg/jQuery/jquery-3.5.0.slim.min.js"></script>
+  <script src="/assets/plg/jQuery/jquery-3.5.1.min.js"></script>
 </body></html>
