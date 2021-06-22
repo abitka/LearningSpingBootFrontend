@@ -40,7 +40,33 @@
           | браузера здесь&nbsp;
       | для правильного отображения сайта.
   -->
-<header th:replace="~{fragments/header_fragment :: headFragment}"></header>
+<!--<header th:replace="~{fragments/header_fragment :: headFragment}"></header>-->
+<header class="Header">
+    <div th:replace="~{fragments/headerRowMain_fragment :: headerRowMain}"></div>
+    <div class="Header-menu">
+        <div class="wrap">
+            <nav class="menuModal" id="navigate">
+                <ul class="menu menu_main">
+                    <li class="menu-item"><a class="menu-link" href="/index.html"
+                                             th:href="@{/}">Главная</a>
+                    </li>
+                    <li class="menu-item"><a class="menu-link" href="/genres/index.html"
+                                             th:href="@{/genres}">Жанры</a>
+                    </li>
+                    <li class="menu-item"><a class="menu-link" href="/books/recent.html"
+                                             th:href="@{/news}">Новинки</a>
+                    </li>
+                    <li class="menu-item"><a class="menu-link" href="/books/popular.html"
+                                             th:href="@{/popular}">Популярное</a>
+                    </li>
+                    <li class="menu-item menu-item_ACTIVE"><a class="menu-link" href="/authors/index.html"
+                                                              th:href="@{/authors}">Авторы</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 <div class="Middle">
     <div class="wrap">
         <main class="Middle-main">
