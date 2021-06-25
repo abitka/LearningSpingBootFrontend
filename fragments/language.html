@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="language">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#locales").change(function () {
+            var selectedOprion = $('#locales').val();
+            if (selectedOprion != '') {
+                window.location.replace('?lang=' + selectedOprion);
+            }
+        });
+    });
+</script>
+</body>
+</html>
