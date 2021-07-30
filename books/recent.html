@@ -71,7 +71,7 @@
                        name="fromdaterecent"
                        type="text"
                        placeholder="Дата"
-                       data-refreshoffset="20"
+                       data-refreshoffset="0"
                        data-refreshlimit="20"
                        data-refreshshow="changedate"
                        data-refreshfrom="0"
@@ -85,7 +85,7 @@
                        name="enddaterecent"
                        type="text"
                        placeholder="Дата"
-                       data-refreshoffset="20"
+                       data-refreshoffset="0"
                        data-refreshlimit="20"
                        data-refreshshow="changedate"
                        data-refreshto="0"
@@ -101,7 +101,7 @@
               <div class="Card-content">
                 <strong class="Card-title"><a href="#" th:text="${book.title}">Техника</a>
                 </strong>
-                <div class="Card-description" th:text="${book.pubDate}">Кондратенко Александр Петрович
+                <div class="Card-description" th:text="${book.pubDate}"<!--th:text="${book.authorList.get(0).getName()}"-->>Кондратенко Александр Петрович
                 </div>
                 <div class="Card-cost"><span class="Card-priceOld" th:text="${book.price}">₽300.00</span>
                   <span class="Card-price" th:text="${book.discount}">₽190.00</span>
